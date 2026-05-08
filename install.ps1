@@ -2,11 +2,11 @@ $os = "windows"
 $arch = if ($IsARM64) { "arm64" } else { "amd64" }
 
 Write-Host "Detecting latest version..." -ForegroundColor Cyan
-$release = Invoke-RestMethod -Uri "https://api.github.com/repos/aabhas-sao/flow/releases/latest"
+$release = Invoke-RestMethod -Uri "https://api.github.com/repos/Facets-cloud/flow/releases/latest"
 $version = $release.tag_name.Substring(1)
 
 $filename = "flow_${version}_${os}_${arch}.tar.gz"
-$url = "https://github.com/aabhas-sao/flow/releases/latest/download/$filename"
+$url = "https://github.com/Facets-cloud/flow/releases/latest/download/$filename"
 
 Write-Host "Downloading $filename..." -ForegroundColor Cyan
 Invoke-WebRequest -Uri $url -OutFile "flow.tar.gz"

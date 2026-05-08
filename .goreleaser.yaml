@@ -42,10 +42,10 @@ changelog:
 homebrew_casks:
   - name: flow
     repository:
-      owner: aabhas-sao
+      owner: Facets-cloud
       name: homebrew-tap
       token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
-    homepage: "https://github.com/aabhas-sao/flow"
+    homepage: "https://github.com/Facets-cloud/flow"
     description: "A complete task manager for Claude Code — and the working memory layer that turns every session from a brilliant new hire into the engineer on your team."
     license: "MIT"
     caveats: |

@@ -93,14 +93,14 @@ now will know everything every prior weekly review surfaced.
 ### Homebrew (Recommended for macOS)
 
 ```bash
-brew install aabhas-sao/tap/flow
+brew install Facets-cloud/tap/flow
 flow init
 ```
 
 ### Quick Install (macOS & Linux)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/aabhas-sao/flow/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Facets-cloud/flow/main/install.sh | bash
 flow init
 ```
 
@@ -111,7 +111,7 @@ flow init
 ### Windows (PowerShell)
 
 ```powershell
-iwr https://raw.githubusercontent.com/aabhas-sao/flow/main/install.ps1 | iex
+iwr https://raw.githubusercontent.com/Facets-cloud/flow/main/install.ps1 | iex
 flow init
 ```
 
@@ -119,7 +119,7 @@ flow init
 
 In any Claude Code session, paste this:
 
-> Install flow from https://github.com/aabhas-sao/flow
+> Install flow from https://github.com/Facets-cloud/flow
 
 Claude reads the repo, downloads the binary, and runs `flow init` —
 which installs the flow skill into `~/.claude/skills/flow/SKILL.md`
@@ -138,7 +138,7 @@ follow along.
 
 In any Claude Code session:
 
-> Upgrade flow from https://github.com/aabhas-sao/flow
+> Upgrade flow from https://github.com/Facets-cloud/flow
 
 Claude fetches the latest release binary and runs `flow skill
 update` to refresh the skill and re-wire the SessionStart and
