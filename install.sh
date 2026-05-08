@@ -18,11 +18,11 @@ case "${OS}" in
 esac
 
 echo "Detecting latest version..."
-LATEST_VERSION=$(curl -s https://api.github.com/repos/aabhas-sao/flow/releases/latest | grep tag_name | cut -d '"' -f 4)
+LATEST_VERSION=$(curl -s https://api.github.com/repos/Facets-cloud/flow/releases/latest | grep tag_name | cut -d '"' -f 4)
 VERSION_NUMBER="${LATEST_VERSION#v}"
 
 FILENAME="flow_${VERSION_NUMBER}_${OS}_${ARCH}.tar.gz"
-URL="https://github.com/aabhas-sao/flow/releases/latest/download/${FILENAME}"
+URL="https://github.com/Facets-cloud/flow/releases/latest/download/${FILENAME}"
 
 echo "Downloading ${FILENAME}..."
 curl -L "${URL}" -o flow.tar.gz
