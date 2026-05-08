@@ -1,0 +1,61 @@
+# .goreleaser.yaml
+# Documentation at https://goreleaser.com
+version: 0.0.1
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - -s -w -X main.version={{.Version}}
+    binary: flow
+
+archives:
+  - format: tar.gz
+    # this name template makes the result look like flow_0.1.0_darwin_amd64.tar.gz
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - LICENSE
+      - README.md
+      - CHANGELOG.md
+
+checksum:
+  name_template: 'checksums.txt'
+
+snapshot:
+  version_template: "{{ incpatch .Version }}-next"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+
+brews:
+  - name: flow
+    repository:
+      owner: aabhas-sao
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+    directory: Formula
+    homepage: "https://github.com/aabhas-sao/flow"
+    description: "A complete task manager for Claude Code — and the working memory layer that turns every session from a brilliant new hire into the engineer on your team."
+    license: "MIT"
+    caveats: |
+      After installation, you must run:
+        flow init
+      to set up the SQLite database and wire flow into Claude Code.
+    install: |
+      bin.install "flow"
+    test: |
+      system "#{bin}/flow --version"

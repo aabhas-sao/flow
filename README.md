@@ -90,11 +90,18 @@ back to the knowledge base on `flow done` like any other task.
 Same compounding mechanic — your weekly review session two months from
 now will know everything every prior weekly review surfaced.
 
-## Install
+### Homebrew (Recommended for macOS)
+
+```bash
+brew install aabhas-sao/tap/flow
+flow init
+```
+
+### via Claude Code
 
 In any Claude Code session, paste this:
 
-> Install flow from https://github.com/Facets-cloud/flow
+> Install flow from https://github.com/aabhas-sao/flow
 
 Claude reads the repo, downloads the binary, and runs `flow init` —
 which installs the flow skill into `~/.claude/skills/flow/SKILL.md`
@@ -110,7 +117,7 @@ follow along.
 ARCH=arm64        # Apple Silicon (M1/M2/M3/M4) — use amd64 for Intel.
 
 curl -fsSL -o /usr/local/bin/flow \
-  "https://github.com/Facets-cloud/flow/releases/latest/download/flow-darwin-${ARCH}"
+  "https://github.com/aabhas-sao/flow/releases/latest/download/flow-darwin-${ARCH}"
 chmod +x /usr/local/bin/flow
 xattr -d com.apple.quarantine /usr/local/bin/flow 2>/dev/null || true
 
@@ -136,7 +143,7 @@ doesn't refuse to run the unsigned binary.
 
 In any Claude Code session:
 
-> Upgrade flow from https://github.com/Facets-cloud/flow
+> Upgrade flow from https://github.com/aabhas-sao/flow
 
 Claude fetches the latest release binary and runs `flow skill
 update` to refresh the skill and re-wire the SessionStart and
