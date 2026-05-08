@@ -90,10 +90,12 @@ back to the knowledge base on `flow done` like any other task.
 Same compounding mechanic — your weekly review session two months from
 now will know everything every prior weekly review surfaced.
 
+## Installation
+
 ### Homebrew (Recommended for macOS)
 
 ```bash
-brew install Facets-cloud/tap/flow
+brew install --cask Facets-cloud/tap/flow
 flow init
 ```
 
